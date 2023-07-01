@@ -1,8 +1,7 @@
 package com.apitemplate.dataservice.controller;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("/")
@@ -11,6 +10,7 @@ class FooController {
 //    @Autowired
 //    private IFooService service;
 
+    @CrossOrigin
     @GetMapping
     public String[] findAll() {
         String[] response = {"get", "mapping", "find", "all"};
@@ -18,12 +18,14 @@ class FooController {
         return response;
     }
 
-    @GetMapping(value = "/{id}")
+    @CrossOrigin
+    @GetMapping(value = "{id}")
     public String findById(@PathVariable("id") Long id) {
 //        return RestPreconditions.checkFound(service.findById(id));
         return "get by Id reached : " + id;
     }
 
+    @CrossOrigin
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public String create(@RequestBody String resource) {
@@ -32,7 +34,8 @@ class FooController {
         return "postMap create reached : " + resource;
     }
 
-    @PutMapping(value = "/{id}")
+    @CrossOrigin
+    @PutMapping(value = "{id}")
     @ResponseStatus(HttpStatus.OK)
     public void update(@PathVariable( "id" ) Long id, @RequestBody String resource) {
 //        Preconditions.checkNotNull(resource);
@@ -40,7 +43,8 @@ class FooController {
 //        service.update(resource);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @CrossOrigin
+    @DeleteMapping(value = "{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable("id") Long id) {
 //        service.deleteById(id);
