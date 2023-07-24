@@ -1,4 +1,5 @@
 package com.apitemplate.dataservice.controller;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,7 +38,7 @@ class FooController {
     @CrossOrigin
     @PutMapping(value = "{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void update(@PathVariable( "id" ) Long id, @RequestBody String resource) {
+    public void update(@PathVariable("id") Long id, @RequestBody String resource) {
 //        Preconditions.checkNotNull(resource);
 //        RestPreconditions.checkNotNull(service.getById(resource.getId()));
 //        service.update(resource);
