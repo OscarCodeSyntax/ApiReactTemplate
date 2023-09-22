@@ -17,7 +17,7 @@ const findAll = async () => {
 
 const findById = async (id: number) => {
   const response = await apiClient.get<number>(`/${id}`);
-  return response.data;
+  return response.data.toString();
 };
 
 const create = async (resource: string) => {

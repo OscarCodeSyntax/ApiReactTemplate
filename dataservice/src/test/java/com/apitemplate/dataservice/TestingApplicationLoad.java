@@ -1,13 +1,16 @@
 package com.apitemplate.dataservice;
 
+
 import org.junit.jupiter.api.Test;
+
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DataserviceApplicationTests {
+public class TestingApplicationLoad {
 
+    //checking that the application loads
     @Test
-    void contextLoads() {
+    public void contextLoads() {
     }
 
 }
