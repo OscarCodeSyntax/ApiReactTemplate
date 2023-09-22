@@ -1,38 +1,68 @@
 import * as React from "react";
 import BasicQueries from "../Resources/DataService/BasicQueries";
+import { useState } from "react";
 
 const ApiButtons = () => {
+
+  const [screenValue, setscreenValue] = useState<String>("Null");
+
+  const deleteOnClick = () => {
+   if( BasicQueries.deleteById(2)){
+    setscreenValue("Deleted")
+   }
+  }
+
+  const findAllOnClick = () => {
+    if(BasicQueries.deleteById(2)) {
+    setscreenValue("Found All")
+    }
+  }
+
+  const updateOnClick = () => {
+    if( BasicQueries.update(2, "updated")) {
+    setscreenValue("Updated")
+    }
+  }
+
+
+  
   return (
     <>
+    {screenValue}
       <div>
         <button
-          onClick={(e: any) => BasicQueries.create("create")}
+          onClick={(e: any) => BasicQueries.create("create").then(setscreenValue)}
           title="Create"
-        />
+          value= "Create"
+        >Create </button>
         <button
           onClick={(e: any) => {
-            BasicQueries.deleteById(2);
+            deleteOnClick()
           }}
-          title="Delete by Id"
-        />
+          title="Delete By Id"
+          value="Delete By Id"
+        >Delete By Id </button>
         <button
           onClick={(e: any) => {
-            BasicQueries.findAll;
+            findAllOnClick()
           }}
           title="Find All"
-        />
+          value="Find All"
+        >Find All </button>
         <button
           onClick={(e: any) => {
-            BasicQueries.findById(1);
+            BasicQueries.findById(1).then(setscreenValue);
           }}
           title="Find By Id"
-        />
+          value="Find By Id"
+        >Find By Id </button>
         <button
           onClick={(e: any) => {
-            BasicQueries.update(2, "updated");
+            updateOnClick()
           }}
           title="Update"
-        />
+          value="Update"
+        >Update </button>
       </div>
       <div></div>
     </>
