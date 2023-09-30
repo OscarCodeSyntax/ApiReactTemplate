@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Api Buttons  renders correctly 1`] = `
+[
+  "Null",
+  <div>
+    <button
+      onClick={[Function]}
+      title="Create"
+      value="Create"
+    >
+      Create 
+    </button>
+    <button
+      onClick={[Function]}
+      title="Delete By Id"
+      value="Delete By Id"
+    >
+      Delete By Id 
+    </button>
+    <button
+      onClick={[Function]}
+      title="Find All"
+      value="Find All"
+    >
+      Find All 
+    </button>
+    <button
+      onClick={[Function]}
+      title="Find By Id"
+      value="Find By Id"
+    >
+      Find By Id 
+    </button>
+    <button
+      onClick={[Function]}
+      title="Update"
+      value="Update"
+    >
+      Update 
+    </button>
+  </div>,
+  <div />,
+]
+`;
