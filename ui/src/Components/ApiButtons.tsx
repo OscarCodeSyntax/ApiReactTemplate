@@ -1,6 +1,8 @@
 import * as React from "react";
 import BasicQueries from "../Resources/DataService/BasicQueries";
 import { useState } from "react";
+import Button from "@mui/material/Button";
+import "../App.css";
 
 const ApiButtons = () => {
   const [screenValue, setscreenValue] = useState<String>("Null");
@@ -24,57 +26,72 @@ const ApiButtons = () => {
   };
 
   return (
-    <>
+    <div className="padding-10">
       {screenValue}
       <div>
-        <button
-          onClick={(e: any) =>
-            BasicQueries.create("create").then(setscreenValue)
-          }
-          title="Create"
-          value="Create"
-        >
-          Create{" "}
-        </button>
-        <button
-          onClick={(e: any) => {
-            deleteOnClick();
-          }}
-          title="Delete By Id"
-          value="Delete By Id"
-        >
-          Delete By Id{" "}
-        </button>
-        <button
-          onClick={(e: any) => {
-            findAllOnClick();
-          }}
-          title="Find All"
-          value="Find All"
-        >
-          Find All{" "}
-        </button>
-        <button
-          onClick={(e: any) => {
-            BasicQueries.findById(1).then(setscreenValue);
-          }}
-          title="Find By Id"
-          value="Find By Id"
-        >
-          Find By Id{" "}
-        </button>
-        <button
-          onClick={(e: any) => {
-            updateOnClick();
-          }}
-          title="Update"
-          value="Update"
-        >
-          Update{" "}
-        </button>
+        <div className="padding-10">
+          <Button
+            variant="outlined"
+            color="secondary"
+            onClick={(e: any) =>
+              BasicQueries.create("create").then(setscreenValue)
+            }
+            title="Create"
+            value="Create"
+          >
+            Create
+          </Button>
+        </div>
+        <div className="padding-10">
+          <Button
+            variant="outlined"
+            onClick={(e: any) => {
+              deleteOnClick();
+            }}
+            title="Delete By Id"
+            value="Delete By Id"
+          >
+            Delete By Id
+          </Button>
+        </div>
+        <div className="padding-10">
+          <Button
+            variant="outlined"
+            onClick={(e: any) => {
+              findAllOnClick();
+            }}
+            title="Find All"
+            value="Find All"
+          >
+            Find All
+          </Button>
+        </div>
+        <div className="padding-10">
+          <Button
+            variant="outlined"
+            onClick={(e: any) => {
+              BasicQueries.findById(1).then(setscreenValue);
+            }}
+            title="Find By Id"
+            value="Find By Id"
+          >
+            Find By Id
+          </Button>
+        </div>
+        <div className="padding-10">
+          <Button
+            variant="outlined"
+            onClick={(e: any) => {
+              updateOnClick();
+            }}
+            title="Update"
+            value="Update"
+          >
+            Update
+          </Button>
+        </div>
       </div>
-      <div></div>
-    </>
+    </div>
   );
 };
 
