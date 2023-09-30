@@ -6,13 +6,14 @@
   "scripts": {
     "start": "webpack serve --port 3000",
     "build": "NODE_ENV=production webpack",
-    "test": "jest",
+    "test": "jest --watchAll",
     "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/preset-react": "^7.22.15",
+    "@testing-library/react": "^14.0.0",
     "@types/enzyme": "^3.10.13",
     "@types/jest": "^29.5.5",
     "@types/mocha": "^10.0.1",
@@ -24,9 +25,10 @@
     "enzyme": "^3.11.0",
     "html-webpack-plugin": "^5.5.3",
     "jest": "^29.5.5",
+    "jest-environment-jsdom": "^29.7.0",
     "mini-css-extract-plugin": "^2.7.6",
     "mocha": "^10.2.0",
-    "prettier": "3.0.0",
+    "prettier": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "3.39.3",

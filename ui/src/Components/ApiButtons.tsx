@@ -3,66 +3,75 @@ import BasicQueries from "../Resources/DataService/BasicQueries";
 import { useState } from "react";
 
 const ApiButtons = () => {
-
   const [screenValue, setscreenValue] = useState<String>("Null");
 
-  async function deleteOnClick()  {
-   if(await BasicQueries.deleteById(2)){
-    setscreenValue("Deleted")
-   }
-  }
-
-  async function findAllOnClick () {
-    if(await BasicQueries.deleteById(2)) {
-    setscreenValue("Found All")
+  const deleteOnClick = () => {
+    if (BasicQueries.deleteById(2)) {
+      setscreenValue("Deleted");
     }
-  }
+  };
 
-  async function updateOnClick () {
-    if(await BasicQueries.update(2, "updated")) {
-    setscreenValue("Updated")
+  const findAllOnClick = () => {
+    if (BasicQueries.deleteById(2)) {
+      setscreenValue("Found All");
     }
-  }
+  };
 
+  const updateOnClick = () => {
+    if (BasicQueries.update(2, "updated")) {
+      setscreenValue("Updated");
+    }
+  };
 
-  
   return (
     <>
-    {screenValue}
+      {screenValue}
       <div>
         <button
-          onClick={(e: any) => BasicQueries.create("create").then(setscreenValue)}
+          onClick={(e: any) =>
+            BasicQueries.create("create").then(setscreenValue)
+          }
           title="Create"
-          value= "Create"
-        >Create </button>
+          value="Create"
+        >
+          Create{" "}
+        </button>
         <button
           onClick={(e: any) => {
-            deleteOnClick()
+            deleteOnClick();
           }}
           title="Delete By Id"
           value="Delete By Id"
-        >Delete By Id </button>
+        >
+          Delete By Id{" "}
+        </button>
         <button
           onClick={(e: any) => {
-            findAllOnClick()
+            findAllOnClick();
           }}
           title="Find All"
           value="Find All"
-        >Find All </button>
+        >
+          Find All{" "}
+        </button>
         <button
           onClick={(e: any) => {
             BasicQueries.findById(1).then(setscreenValue);
           }}
           title="Find By Id"
           value="Find By Id"
-        >Find By Id </button>
+        >
+          Find By Id{" "}
+        </button>
         <button
           onClick={(e: any) => {
-            updateOnClick()
+            updateOnClick();
           }}
           title="Update"
           value="Update"
-        >Update </button>
+        >
+          Update{" "}
+        </button>
       </div>
       <div></div>
     </>
