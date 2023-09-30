@@ -6,20 +6,20 @@ const ApiButtons = () => {
 
   const [screenValue, setscreenValue] = useState<String>("Null");
 
-  const deleteOnClick = () => {
-   if( BasicQueries.deleteById(2)){
+  async function deleteOnClick()  {
+   if(await BasicQueries.deleteById(2)){
     setscreenValue("Deleted")
    }
   }
 
-  const findAllOnClick = () => {
-    if(BasicQueries.deleteById(2)) {
+  async function findAllOnClick () {
+    if(await BasicQueries.deleteById(2)) {
     setscreenValue("Found All")
     }
   }
 
-  const updateOnClick = () => {
-    if( BasicQueries.update(2, "updated")) {
+  async function updateOnClick () {
+    if(await BasicQueries.update(2, "updated")) {
     setscreenValue("Updated")
     }
   }
