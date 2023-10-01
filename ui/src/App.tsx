@@ -1,12 +1,12 @@
 import * as React from "react";
-import "./App.scss";
+import "./App.css";
 import ApiButtons from "./Components/ApiButtons";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="text-center padding-20">
+      <h1>API TEMPLATE</h1>
       <ApiButtons />
-      <h1>HelloWorld</h1>
     </div>
   );
 };
